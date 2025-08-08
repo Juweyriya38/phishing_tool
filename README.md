@@ -42,9 +42,12 @@ pip install -r requirements.txt
 
 
             Set your Groq API key
-Create a .env file in the root folder:
+Create a .env file in the folder:
+and accese the grock website link 
+            https://groq.com/
 and add like this on your api key
     GROQ_API_KEY=your_groq_api_key_here
+and save it as .env file 
 
 
         ▶️ Running the Application
@@ -75,3 +78,4 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
