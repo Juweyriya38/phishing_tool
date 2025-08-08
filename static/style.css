@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+.container, .result-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #2c6bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1b4fd1;
+}
+
+.warning {
+    color: orange;
+}
+
+.blocked {
+    color: red;
+}
+
+.safe {
+    color: green;
+}
+
+.be-careful {
+    font-weight: bold;
+    color: darkred;
+}

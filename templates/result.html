@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detection Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f6f7fb; color: #333; }
+        .container { max-width: 800px; margin: 50px auto; padding: 20px; }
+        .card { border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: white; }
+        .phishing { background: linear-gradient(135deg, #ff4e50, #f9d423); color: white; border-left: 8px solid #b00020; }
+        .safe { background: linear-gradient(135deg, #56ab2f, #a8e063); color: white; border-left: 8px solid #2e7d32; }
+        .progress-container { background-color: rgba(255,255,255,0.2); border-radius: 25px; height: 20px; overflow: hidden; margin-top: 10px; }
+        .progress-bar { height: 100%; text-align: right; padding-right: 10px; color: #fff; font-weight: bold; line-height: 20px; }
+        .ai-reason { background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    {% if result.is_suspicious %}
+    <div class="card phishing">
+        <h1>🚨 Phishing Detected!</h1>
+        <p>This site or message is flagged as potentially harmful. Avoid clicking links or entering personal data.</p>
+        <div class="ai-reason">{{ ai_result }}</div>
+    </div>
+    {% else %}
+    <div class="card safe">
+        <h1>✅ Safe Website / Message</h1>
+        <p>No phishing signs detected. Known site confidence score:</p>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: {{ result.score }}%; background-color: rgba(0,0,0,0.3);">
+                {{ result.score }}%
+            </div>
+        </div>
+        <div class="ai-reason">{{ ai_result }}</div>
+    </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
