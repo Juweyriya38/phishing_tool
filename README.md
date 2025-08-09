@@ -48,6 +48,7 @@ Developed by Group31 as part of a real-world cybersecurity project.
 MIT License
 ---
 
+
 ## ✨ Features
 - 🔍 **Heuristic Detection** — Suspicious keywords, domains, and insecure links
 - 🤖 **Groq AI Integration** — Short, accurate phishing verdicts in 3 lines
@@ -59,7 +60,7 @@ MIT License
 
 ## 📦 Installation
 
-### **1. Clone the repository**
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/phishing-detector.git
 cd phishing-detector
@@ -96,10 +97,12 @@ python app.py
 now open browser and navigate 
 
     http://127.0.0.1:5000
+```bash
 
 
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/220fa48e-ab80-4a8f-9b5b-1f994d30f1ed" />
 
-
+'''bash
 
 
                     project structure 
@@ -114,5 +117,6 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
 
 
