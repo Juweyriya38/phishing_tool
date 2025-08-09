@@ -1,15 +1,51 @@
-﻿# phishing_tool
+🛡️ AI-Powered Phishing Detection and Analysis Tool
 
-==============================
-README.md
-==============================
-# 🛡️ AI-Powered Phishing Detector
+ 📌 Description
 
-![Phishing Detector Banner](https://i.imgur.com/tYqZ5oY.png)
+This tool analyzes emails and URLs to detect phishing attempts using heuristic rules and signature-based detection. It helps reduce the risk of social engineering attacks by flagging suspicious content before users interact with it.
 
-An advanced **AI + heuristic-based phishing detection tool** for analyzing URLs and text messages.  
-Built with **Flask**, **Groq AI API**, and a **custom rule-based engine**, it detects potential phishing threats and gives a confidence score.
+ 🔍 Key Features
 
+- Email Analysis – Checks sender info, headers, and message content for phishing indicators.
+- URL Scanning – Detects:
+  - Typosquatting (e.g., g00gle.com)
+  - Shortened/obfuscated links
+  - Known phishing domains
+- Heuristic Engine – Uses logic-based rules to detect suspicious behavior without relying on signatures alone.
+- Signature Matching – Cross-references known phishing URLs from sources like PhishTank.
+- IOC Extraction – Extracts indicators of compromise (IPs, domains, payload links).
+- Modular Design – Can run standalone or plug into larger security pipelines.
+
+ 💡 Why It’s Different
+
+Most phishing tools are heavy, API-dependent, or ignore local/regional threats. Ours is:
+
+- Lightweight and fast 
+- Customizable for specific phishing threats (e.g., local banks, telecom)
+- Beginner-friendly but expandable for advanced use cases
+- Designed for real-world training, not just detection
+
+ 🛠 Tech Stack
+
+- Python
+- Regex and rule-based logic
+- WHOIS and DNS lookups
+- Public threat intel feeds (e.g., PhishTank, OpenPhish)
+
+ 🚧 Roadmap
+
+- [ ] Machine learning phishing classifier (optional module)
+- [ ] GUI for non-technical users
+- [ ] Real-time scanning mode
+- [ ] Email training simulations
+
+ 🤝 Credits
+
+Developed by Group31 as part of a real-world cybersecurity project.
+
+📜 License
+
+MIT License
 ---
 
 ## ✨ Features
@@ -17,7 +53,7 @@ Built with **Flask**, **Groq AI API**, and a **custom rule-based engine**, it de
 - 🤖 **Groq AI Integration** — Short, accurate phishing verdicts in 3 lines
 - 📊 **Visual Score** — Progress bar showing site safety
 - 🖥️ **Web Interface** — Run locally in your browser
-- ⛔ **Blocked Domain Detection** — Immediate 100% phishing score if critical domains are found
+
 
 ---
 
@@ -78,4 +114,5 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
 
