@@ -11,20 +11,21 @@ This tool analyzes emails and URLs to detect phishing attempts using heuristic r
 git clone https://github.com/YOUR_USERNAME/phishing-detector.git
 cd phishing-detector
 
-   #### On Kali Linux / Debian-based Linux
+          On Kali Linux / Debian-based Linux
 
 sudo apt update
 sudo apt install python3 python3-pip -y
 pip3 install -r requirements.txt
 
-  #### on windows
+         on windows
 
 git clone https://github.com/YOUR_USERNAME/phishing-detector.git
 cd phishing-detector
 pip install -r requirements.txt
 
 
-   #### Set your Groq API key
+          Set your Groq API key
+
 Create a .env file in the folder:
 and accese the grock website link 
             https://groq.com/
@@ -34,6 +35,7 @@ and save it as .env file
 
 
         ▶️ Running the Application
+
 On Kali Linux
 python3 app.py
 
@@ -44,7 +46,7 @@ now open browser and navigate
 
     http://127.0.0.1:5000
 
- ##🔍 Key Features
+     🔍 Key Features
 
 - Email Analysis – Checks sender info, headers, and message content for phishing indicators.
 - URL Scanning – Detects:
@@ -56,7 +58,7 @@ now open browser and navigate
 - IOC Extraction – Extracts indicators of compromise (IPs, domains, payload links).
 - Modular Design – Can run standalone or plug into larger security pipelines.
 
- ##💡 Why It’s Different
+   💡 Why It’s Different
 
 Most phishing tools are heavy, API-dependent, or ignore local/regional threats. Ours is:
 
@@ -97,7 +99,7 @@ MIT License
 
 ---
 
-##  project structure 
+   project structure 
 
 phishing-detector/
 │   app.py                # Main Flask app
@@ -109,6 +111,7 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
 
 
 
