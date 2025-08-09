@@ -57,7 +57,8 @@ MIT License
 
 
 ---
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/220fa48e-ab80-4a8f-9b5b-1f994d30f1ed" />
+<img width="1366" height="704" alt="Screenshot_2025-08-09_05_23_11" src="https://github.com/user-attachments/assets/2bb8040f-5bd3-4c2c-91f0-a5916b54db6f" />
+
 
 ## 📦 Installation
 
@@ -111,6 +112,7 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
 
 
 
