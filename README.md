@@ -57,6 +57,7 @@ MIT License
 
 
 ---
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/220fa48e-ab80-4a8f-9b5b-1f994d30f1ed" />
 
 ## 📦 Installation
 
@@ -97,13 +98,6 @@ python app.py
 now open browser and navigate 
 
     http://127.0.0.1:5000
-'''bash
-
-
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/220fa48e-ab80-4a8f-9b5b-1f994d30f1ed" />
-
-
-```bash
 
                     project structure 
 
@@ -118,6 +112,6 @@ phishing-detector/
     │   index.html        # Input form
     │   result.html       # Result display page
 
-'''bash
+
 
 
