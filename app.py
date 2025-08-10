@@ -3,6 +3,14 @@ import json
 import requests
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+import sys
+
+files_in_directory = os.listdir()
+
+if ".env" not in files_in_directory:
+
+    sys.exit("❌ Error: Make sure you have a .env file with GROQ_API_KEY set.")
+print("✅ Success: .env file found. Continuing execution...")
 
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -61,3 +69,4 @@ def analyze():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
