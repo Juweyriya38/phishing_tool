@@ -4,22 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing Detector</title>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .error {
-            border-color: #dc2626 !important; /* Tailwind's red-600 */
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .error { border-color: #dc2626 !important; }
     </style>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
@@ -40,38 +31,27 @@
 
             <!-- Form -->
             <form id="phishing-form" method="POST" action="/analyze">
-                <!-- URL Input -->
                 <div class="mb-6">
                     <label for="url" class="block mb-2 text-sm font-medium text-gray-700">URL to Analyze</label>
                     <input type="url" id="url" name="url" 
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 transition duration-150 ease-in-out" 
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" 
                         placeholder="https://example.com">
                     <p id="url-error" class="mt-2 text-sm text-red-600 hidden">Please fill at least one field: URL or Text.</p>
                 </div>
-
-                <!-- Text Input -->
                 <div class="mb-6">
                     <label for="text" class="block mb-2 text-sm font-medium text-gray-700">Email or Message Text</label>
                     <textarea id="text" name="text" rows="6" 
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 transition duration-150 ease-in-out" 
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" 
                         placeholder="Paste the suspicious text here..."></textarea>
                     <p id="text-error" class="mt-2 text-sm text-red-600 hidden">Please fill at least one field: URL or Text.</p>
                 </div>
-
-                <!-- Submit -->
                 <div class="text-center">
                     <button type="submit" 
-                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full sm:w-auto px-8 py-3 text-center transition duration-150 ease-in-out shadow-md hover:shadow-lg">
+                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-full sm:w-auto px-8 py-3">
                         Analyze Now
                     </button>
                 </div>
             </form>
-
-            <!-- Result -->
-            <div id="result-container" class="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200 hidden">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Analysis Result</h3>
-                <div id="result-text" class="text-gray-600"></div>
-            </div>
         </div>
         <p class="text-center text-xs text-gray-400 mt-6">
             This tool provides a preliminary analysis. Always be cautious with suspicious links and messages.
@@ -88,16 +68,13 @@
             const urlValue = urlField.value.trim();
             const textValue = textField.value.trim();
 
-            // Reset error states
             urlField.classList.remove("error");
             textField.classList.remove("error");
             urlError.classList.add("hidden");
             textError.classList.add("hidden");
 
             if (!urlValue && !textValue) {
-                event.preventDefault(); // Stop form submission
-                
-                // Show error on both fields
+                event.preventDefault();
                 urlField.classList.add("error");
                 textField.classList.add("error");
                 urlError.classList.remove("hidden");
