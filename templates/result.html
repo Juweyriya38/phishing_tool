@@ -2,42 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Phishing Detection Result</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f6f7fb; color: #333; }
-        .container { max-width: 800px; margin: 50px auto; padding: 20px; }
-        .card { border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: white; }
-        .phishing { background: linear-gradient(135deg, #ff4e50, #f9d423); color: white; border-left: 8px solid #b00020; }
-        .safe { background: linear-gradient(135deg, #56ab2f, #a8e063); color: white; border-left: 8px solid #2e7d32; }
-        .progress-container { background-color: rgba(255,255,255,0.2); border-radius: 25px; height: 20px; overflow: hidden; margin-top: 10px; }
-        .progress-bar { height: 100%; text-align: right; padding-right: 10px; color: #fff; font-weight: bold; line-height: 20px; }
-        .ai-reason { background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-top: 15px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result - Phishing Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<div class="container">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    {% if result.is_suspicious %}
-    <div class="card phishing">
-        <h1>🚨 Phishing Detected!</h1>
-        <p>This site or message is flagged as potentially harmful. Avoid clicking links or entering personal data.</p>
-        <div class="ai-reason">{{ ai_result }}</div>
-    </div>
-    {% else %}
-    <div class="card safe">
-        <h1>✅ Safe Website / Message</h1>
-        <p>No phishing signs detected. Known site confidence score:</p>
-        <div class="progress-container">
-            <div class="progress-bar" style="width: {{ result.score }}%; background-color: rgba(0,0,0,0.3);">
-                {{ result.score }}%
+    <div class="w-full max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg">
+
+        {% if error %}
+            <div class="bg-red-100 border-l-4 border-red-600 p-6">
+                <h2 class="text-xl font-bold text-red-800">❌ Error</h2>
+                <p class="text-red-700 mt-2">{{ error }}</p>
             </div>
-        </div>
-        <div class="ai-reason">{{ ai_result }}</div>
-    </div>
-    {% endif %}
+        {% elif result.is_phishing %}
+            <div class="bg-gradient-to-r from-red-600 to-red-400 text-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold">🚨 Phishing Detected!</h2>
+                <ul class="mt-4 list-disc pl-5 space-y-2 text-sm leading-relaxed">
+                    {% for line in result.reason_lines %}
+                        <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <div class="bg-gradient-to-r from-green-500 to-green-300 text-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold">✅ Safe Website / Message</h2>
+                <ul class="mt-4 list-disc pl-5 space-y-2 text-sm leading-relaxed">
+                    {% for line in result.reason_lines %}
+                        <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
 
-</div>
+        <div class="mt-6 text-center">
+            <a href="/" class="text-blue-600 hover:underline">🔙 Check Another</a>
+        </div>
+
+    </div>
+
 </body>
 </html>
-<!DOCTYPE html>
-<html>
