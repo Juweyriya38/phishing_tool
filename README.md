@@ -64,7 +64,7 @@ MIT License
 
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/phishing-detector.git
+git clone https://github.com/Animhassen/phishing_tool.git)
 cd phishing-detector
 
             On Kali Linux / Debian-based Linux
@@ -112,6 +112,7 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
 
 
 
