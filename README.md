@@ -75,8 +75,8 @@ pip3 install -r requirements.txt
 
             #on windows
 
-git clone https://github.com/YOUR_USERNAME/phishing-detector.git
-cd phishing-detector
+git clone https://github.com/YOUR_USERNAME/phishing-tool.git
+cd phishing-tool
 pip install -r requirements.txt
 
 
@@ -112,6 +112,7 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
 
 
 
