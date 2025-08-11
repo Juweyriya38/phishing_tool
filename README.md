@@ -67,20 +67,20 @@ MIT License
 git clone https://github.com/Animhassen/phishing_tool.git
 cd phishing-detector
 
-            On Kali Linux / Debian-based Linux
+            #On Kali Linux / Debian-based Linux
 
 sudo apt update
 sudo apt install python3 python3-pip -y
 pip3 install -r requirements.txt
 
-            on windows
+            #on windows
 
 git clone https://github.com/YOUR_USERNAME/phishing-detector.git
 cd phishing-detector
 pip install -r requirements.txt
 
 
-            Set your Groq API key
+            #Set your Groq API key
 
 Create a .env file in the folder:
 and accese the grock website link https://groq.com/
@@ -89,7 +89,7 @@ and add like this on your api key
     GROQ_API_KEY=your_groq_api_key_here
 and save it as .env file 
 
-        ▶️ Running the Application
+        #▶️ Running the Application
 On Kali Linux
 python3 app.py
 
@@ -112,6 +112,7 @@ phishing-detector/
 └── templates/
     │   index.html        # Input form
     │   result.html       # Result display page
+
 
 
 
