@@ -150,48 +150,7 @@ export function MaliciousUrl() {
         </Card>
 
         {/* File Upload Card */}
-        <Card>
-          <CardHeader>
-            <CardTitle>File Upload</CardTitle>
-            <CardDescription>Upload a file to display its name and basic info</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <label htmlFor="file-upload" className="block text-sm font-medium mb-2">
-                Select File
-              </label>
-              <div className="relative">
-                <Input
-                  id="file-upload"
-                  type="file"
-                  onChange={handleFileUpload}
-                  className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                />
-              </div>
-            </div>
-
-            {uploadedFile && (
-              <Alert className="border-blue-200 bg-blue-50">
-                <Upload className="h-4 w-4 text-blue-600" />
-                <AlertDescription className="text-blue-800">
-                  <strong>File Selected:</strong>
-                  <div className="mt-1 font-mono text-sm bg-white px-2 py-1 rounded border">{uploadedFile}</div>
-                  <div className="mt-2 text-xs">
-                    File extension: .{uploadedFile.split(".").pop()?.toLowerCase() || "unknown"}
-                  </div>
-                </AlertDescription>
-              </Alert>
-            )}
-
-            {!uploadedFile && (
-              <div className="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <Upload className="h-8 w-8 mx-auto mb-2 text-gray-400" />
-                <p>No file selected</p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      </div>
+        </div>
 
       {/* Educational Info */}
       <Card className="mt-6">

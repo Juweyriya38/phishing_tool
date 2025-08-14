@@ -1,11 +1,14 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { Shield, Mail, Link, FileText, UserCheck, DoorOpen, Phone, Gift } from "lucide-react"
+import { Shield, Mail, Link, FileText, UserCheck, DoorOpen, Phone, Gift, Menu, X } from "lucide-react"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 interface SidebarProps {
   activeModule: string
   setActiveModule: (module: string) => void
+  isOpen?: boolean
+  onToggle?: () => void
 }
 
 const navigationItems = [
@@ -53,17 +56,50 @@ const navigationItems = [
   },
 ]
 
-export function Sidebar({ activeModule, setActiveModule }: SidebarProps) {
+export function Sidebar({ activeModule, setActiveModule, isOpen = true, onToggle }: SidebarProps) {
+  const isMobile = useIsMobile()
+
+  const handleModuleSelect = (module: string) => {
+    setActiveModule(module)
+    if (isMobile && onToggle) {
+      onToggle()
+    }
+  }
+
   return (
-    <div className="w-80 bg-gray-900 text-white flex flex-col">
+    <>
+      {isMobile && isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={onToggle}
+        />
+      )}
+      <div className={cn(
+        "bg-gray-900 text-white flex flex-col transition-transform duration-300 ease-in-out",
+        isMobile ? (
+          cn(
+            "fixed top-0 left-0 h-full w-80 z-50",
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          )
+        ) : "w-80 relative"
+      )}>
       <div className="p-6 border-b border-gray-700">
-        <div className="flex items-center gap-3">
-          <Shield className="h-8 w-8 text-blue-400" />
-          <div>
-            <h1 className="text-xl font-bold">Security Awareness</h1>
-            <p className="text-sm text-gray-400">Training Platform</p>
-            
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Shield className="h-8 w-8 text-blue-400" />
+            <div>
+              <h1 className="text-xl font-bold">Security Awareness</h1>
+              <p className="text-sm text-gray-400">Training Platform</p>
+            </div>
           </div>
+          {isMobile && (
+            <button
+              onClick={onToggle}
+              className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          )}
         </div>
       </div>
 
@@ -75,7 +111,7 @@ export function Sidebar({ activeModule, setActiveModule }: SidebarProps) {
             return (
               <button
                 key={item.id}
-                onClick={() => setActiveModule(item.id)}
+                onClick={() => handleModuleSelect(item.id)}
                 className={cn(
                   "w-full text-left p-4 rounded-lg transition-all duration-200 group",
                   "hover:bg-gray-800 hover:translate-x-1",
@@ -106,5 +142,6 @@ export function Sidebar({ activeModule, setActiveModule }: SidebarProps) {
         <div className="text-xs text-gray-500 text-center">Stay vigilant. Stay secure.</div>
       </div>
     </div>
+    </>
   )
 }

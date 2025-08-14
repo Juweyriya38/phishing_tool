@@ -15,6 +15,7 @@ export function PhishingEmail() {
     score: number
   } | null>(null)
 
+  const [email, setEmail] = useState("");
   const suspiciousKeywords = [
     "urgent",
     "immediate",
@@ -66,6 +67,21 @@ export function PhishingEmail() {
           <CardDescription>This tool scans for common phishing keywords and patterns</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          <div>
+            <label htmlFor="email-address" className="block text-sm font-medium mb-2">
+              Email address
+            </label>
+
+              <input
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+          </div>
           <div>
             <label htmlFor="email-content" className="block text-sm font-medium mb-2">
               Email Content
